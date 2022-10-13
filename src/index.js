@@ -40,7 +40,7 @@ app.get("/get-message/:room", async (req, res) => {
     const room = req.params.room
 
     console.log(room)
-    ChatModel.find({room: room}, (err, result) => {
+    await ChatModel.find({room: room}, (err, result) => {
         if (err) {
             res.send(err)
         }
