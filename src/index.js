@@ -2,17 +2,13 @@ import express from "express"
 import cors from "cors"
 import mongoose from "mongoose"
 import { ChatModel } from "./chat.js"
-import { config } from "dotenv"
-
-config()
-
-const mongoURL = process.env.MONGO_URL
 
 const app = express()
 app.use(cors())
 app.use(express.json()) 
 const PORT = process.env.PORT || 5555
 
+const mongoURL = "mongodb+srv://luis:felipe05@chat.g7ebxn3.mongodb.net/Chat?retryWrites=true&w=majority"
 
 // connects to the mongo db
 mongoose.connect(mongoURL, {
